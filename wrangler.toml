@@ -1,0 +1,8 @@
+name = "availyv2"
+main = "src/index.ts"
+compatibility_date = "2023-09-12"
+
+kv_namespaces = [
+    { binding = "SLACK_INSTALLATIONS", id = "3d68637dcb194b9e9fb58bd72ec33f05", preview_id = "e58a7faaf8f5439caa431417fa63f68c" },
+    { binding = "SLACK_OAUTH_STATES", id = "24e4b8e85e8546ce98d1c46760031a87", preview_id = "22cae88bc67d4aaf9d2cb8d8d93cece5"}
+]

@@ -1,0 +1,43 @@
+display_information:
+  name: Availy.v2
+  description: Second generation shift scheduler.
+  background_color: '#6463ff'
+features:
+  app_home:
+    home_tab_enabled: false
+    messages_tab_enabled: true
+    messages_tab_read_only_enabled: false
+  bot_user:
+    display_name: Availy.v2
+    always_online: true
+  shortcuts:
+    - name: Availy.v2
+      type: global
+      callback_id: test
+      description: test
+  slash_commands:
+    - command: /requestoff
+      url: https://example.com/slack/events
+      description: test
+      usage_hint: test
+      should_escape: false
+oauth_config:
+  redirect_urls:
+    - https://example.com/slack/oauth_redirect
+    - https://example.com/slack/login/callback
+  scopes:
+    bot:
+      - app_mentions:read
+      - chat:write
+      - commands
+settings:
+  event_subscriptions:
+    request_url: https:/example.com/slack/events
+    bot_events:
+      - app_mention
+  interactivity:
+    is_enabled: true
+    request_url: https://example.com/slack/events
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false
