@@ -42,4 +42,8 @@ Don't worry! If you mention the app in any channel, it will send you a message t
 
 <!-- add to slack button -->
 
+Use this button to add Availy.v2 to your slack workspace:
+
 <a href="https://slack.com/oauth/v2/authorize?client_id=4121299340165.5886407782466&scope=app_mentions:read,chat:write,commands&user_scope="><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcSet="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
+
+Once installed to your workspace, create a channel called `availy-posts` and add Availy.v2 to it. This is where all of the shift requests will be posted. Then you are all set! You can start using Availy.v2 by typing `/requestoff` in the App Messages tab.
