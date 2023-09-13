@@ -1,10 +1,3 @@
-# TODO:
-
-- Change installation landing page
-- Privacy policy URL
-- Support URL
-- Update slack urls in app manifest to worker url
-
 # Introduction
 
 Availy.v2 is a slack app that allows users to request off shifts cover others' shifts. It was originally built using [bolt](https://slack.dev/bolt-js/tutorial/getting-started) and [mongoDB](https://www.mongodb.com/) hosted on [heroku](https://www.heroku.com/what). View the original repo [here](https://github.com/breyr/Availy-bot).
