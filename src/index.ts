@@ -218,7 +218,11 @@ export default {
       })
       .action('cover_shift_click', async ({ context, body }) => {
         // only allow someone who wasn't the original poster to cover the shift
-        if (body['user']['id'] != context.userId) {
+        // get posted message text
+        const postedMessage = body['message']['blocks']['0']['text']['text'];
+        // get user who posted the original message
+        const postedUser = postedMessage.split('<@')[1].split('>')[0];
+        if (postedUser != context.userId) {
           const formMessageTS = body['container']['message_ts'];
           const formMessageChannel = body['container']['channel_id'];
           // get posted message text
