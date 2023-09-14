@@ -36,44 +36,84 @@ export default {
         },
       },
     })
-      .event('app_mention', async ({ context, body }) => {
-        await context.client.chat.postEphemeral({
-          // post to any channel the bot is in
-          channel: context.channelId,
-          text: `post tutorial to <@${context.userId}>`,
-          // error but its fine
-          user: context.userId,
-          blocks: [
-            {
-              type: 'header',
-              text: {
-                type: 'plain_text',
-                text: 'How to use Availy.v2 :)',
-                emoji: true,
+      .command('/tutorial', async ({ context, body }) => {
+        // check if in direct message
+        if (body.channel_name == 'directmessage') {
+          await context.client.chat.postMessage({
+            // post to any channel the bot is in
+            channel: context.channelId,
+            text: `post tutorial to <@${context.userId}>`,
+            blocks: [
+              {
+                type: 'header',
+                text: {
+                  type: 'plain_text',
+                  text: 'How to use Availy.v2 :)',
+                  emoji: true,
+                },
               },
-            },
-            {
-              type: 'section',
-              text: {
-                type: 'mrkdwn',
-                text: '`/requestoff` can only be used in the App Messages tab\nThis command will send you a form that looks like the following: ',
+              {
+                type: 'section',
+                text: {
+                  type: 'mrkdwn',
+                  text: '`/requestoff` can only be used in the App Messages tab\nThis command will send you a form that looks like the following: ',
+                },
               },
-            },
-            {
-              type: 'image',
-              image_url:
-                'https://pub-114c799e890b47d689ae8b775cbd7d56.r2.dev/shiftform.png',
-              alt_text: 'shift form example',
-            },
-            {
-              type: 'section',
-              text: {
-                type: 'mrkdwn',
-                text: 'Once submitted, Availy.v2 will post your shift in the `#availy-posts` channel where other users can cover your shift!',
+              {
+                type: 'image',
+                image_url:
+                  'https://pub-114c799e890b47d689ae8b775cbd7d56.r2.dev/shiftform.png',
+                alt_text: 'shift form example',
               },
-            },
-          ],
-        });
+              {
+                type: 'section',
+                text: {
+                  type: 'mrkdwn',
+                  text: 'Once submitted, Availy.v2 will post your shift in the `#availy-posts` channel where other users can cover your shift!',
+                },
+              },
+            ],
+          });
+        } else {
+          // post ephemeral message if the command is used in a channel, not a dm
+          await context.client.chat.postEphemeral({
+            // post to any channel the bot is in
+            channel: context.channelId,
+            text: `post tutorial to <@${context.userId}>`,
+            // error but its fine
+            user: context.userId,
+            blocks: [
+              {
+                type: 'header',
+                text: {
+                  type: 'plain_text',
+                  text: 'How to use Availy.v2 :)',
+                  emoji: true,
+                },
+              },
+              {
+                type: 'section',
+                text: {
+                  type: 'mrkdwn',
+                  text: '`/requestoff` can only be used in the App Messages tab\nThis command will send you a form that looks like the following: ',
+                },
+              },
+              {
+                type: 'image',
+                image_url:
+                  'https://pub-114c799e890b47d689ae8b775cbd7d56.r2.dev/shiftform.png',
+                alt_text: 'shift form example',
+              },
+              {
+                type: 'section',
+                text: {
+                  type: 'mrkdwn',
+                  text: 'Once submitted, Availy.v2 will post your shift in the `#availy-posts` channel where other users can cover your shift!',
+                },
+              },
+            ],
+          });
+        }
       })
       .action('requestoff-btn-action', async ({ context, body }) => {
         const submittedForm = body['state']['values'];

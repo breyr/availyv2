@@ -32,9 +32,9 @@ _Note: You will not be able to cover your own shift._
 
 ### What if I forget all of this? 😅
 
-Don't worry! If you mention the app in any channel, it will send you a message that only you can see. This includes a basic run down on how to submit a request. Here is an example:
+Don't worry! If you use `/tutorial` in any channel, it will send you a message that only you can see if you use the command not in the DM with Availy.v2. This includes a basic run down on how to submit a request. Here is an example:
 
-<img src="imgs/mention.png" style="width:400px;"/>
+<img src="imgs/tutorial.png" style="width:400px;"/>
 
 #### That's it! Please feel free to email [me](mailto:breyr@gmail.com) if you experience any bugs :)
 
